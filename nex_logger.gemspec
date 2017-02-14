@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "nex_logger"
   spec.version       = NexLogger::VERSION
   spec.authors       = ["Xavier Delamotte"]
-  spec.email         = ["git@xade.eu"]
+  spec.email         = ["developers@maestrano.com"]
 
   spec.summary       = "Gem used to unify logging across maestrano projects "
   spec.homepage      = "https://github.com/maestrano/nex_logger"

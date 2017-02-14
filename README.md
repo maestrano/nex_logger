@@ -2,7 +2,12 @@
 
 Gem used to unify logging across maestrano projects.
 
-Add RAILS_LOG_TO_STDOUT to your environment variable to activate log redirection to stdout.
+## Environment Variables
+
+- RAILS_LOG_TO_STDOUT : Activate log redirection to stdout.
+- LOGRAGE_ENABLED : Activate or Deactivate Lograge, by default it is only enabled in production
+- LOG_LEVEL : Defines the logging level, Can be: DEBUG INFO WARN ERROR FATAL
+
 
 ## Installation
 
