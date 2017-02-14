@@ -1,4 +1,4 @@
-require 'lograge/railtie'
+require 'lograge'
 
 module NexLogger
   class Configurer
