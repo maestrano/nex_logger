@@ -1,4 +1,4 @@
-require 'lograge/railtie'
+require 'lograge'
 
 module NexLogger
   class Configurer
@@ -14,9 +14,17 @@ module NexLogger
         ::Rails.logger = config.logger =logger
         STDOUT.sync = true
       end
-      #lograge is not enable by default in development
-      config.lograge.enabled = !Rails.env.development?
-      #the colorization of logging is not active in production
+
+      # lograge is not enabled by default in development
+      config.lograge.enabled = ENV['LOGRAGE_ENABLED'].present? || !Rails.env.development?
+      config.lograge.custom_options = lambda do |event|
+        exceptions = %w(controller action format id)
+        {
+          params: event.payload[:params].except(*exceptions)
+        }
+      end
+
+      # The colorization of logging is not active in production
       config.colorize_logging = Rails.env.development?
     end
   end
